@@ -43,4 +43,17 @@ describe("Thermostat", function(){
   thermostat.increase()
   expect(thermostat.temp).toEqual(25);
   });
+
+  it("Has a max temp of 32 if powersaving is off", function(){
+  thermostat.off()
+  expect(thermostat.maxTemp).toEqual(32)
+  })
+
+  it("Can be reset", function(){
+    thermostat.increase()
+    thermostat.increase()
+    thermostat.increase()
+    thermostat.reset()
+    expect(thermostat.temp).toEqual(20)
+  })
 });

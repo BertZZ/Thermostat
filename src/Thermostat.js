@@ -26,7 +26,6 @@ Thermostat.prototype.off = function() {
   this.maxTemp = 32;
 }
 
-var thermostat = new Thermostat()
-thermostat.off()
-console.log(thermostat.isPowersaving)
-console.log(thermostat.maxTemp)
+Thermostat.prototype.reset = function(){
+  this.temp = 20
+}

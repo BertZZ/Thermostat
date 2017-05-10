@@ -29,3 +29,13 @@ Thermostat.prototype.off = function() {
 Thermostat.prototype.reset = function(){
   this.temp = 20
 }
+
+Thermostat.prototype.usage = function(){
+   if (this.temp < 18){
+    return "Low"
+  }else if(this.temp > 25){
+    return "High"
+  } else {
+  return "Medium"
+  }
+}

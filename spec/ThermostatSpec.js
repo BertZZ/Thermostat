@@ -56,4 +56,13 @@ describe("Thermostat", function(){
     thermostat.reset()
     expect(thermostat.temp).toEqual(20)
   })
+
+  it('Returns Low when Temperature is less than 18', function(){
+    thermostat.temp = 17
+    expect(thermostat.usage()).toEqual("Low")
+  })
+
+  it("Returns medium when temperature is between 18 and 25", function(){
+    expect(thermostat.usage()).toEqual("Medium")
+  })
 });

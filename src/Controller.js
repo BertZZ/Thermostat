@@ -7,8 +7,8 @@ $(document).ready(function() {
   $('#temp').text(th1.temp)
   })
 
-    $('#decreaseTemperature').on('click', function() {
-    th1.decrease()
-    $('#temp').text(th1.temp)
-    })
+  $('#decreaseTemperature').on('click', function() {
+  th1.decrease()
+  $('#temp').text(th1.temp)
+  })
 })

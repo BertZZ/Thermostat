@@ -34,13 +34,13 @@ describe("Thermostat", function(){
   })
 
   it("Turns Powersaving mode off", function(){
-    thermostat.off()
+    thermostat.powersavingOff()
     expect(thermostat.isPowersaving).toEqual(false)
   });
 
   it("Turns powersaving mode back on", function(){
-    thermostat.off()
-    thermostat.on()
+    thermostat.powersavingOff()
+    thermostat.powersavingOn()
     expect(thermostat.isPowersaving).toEqual(true)
   })
 
@@ -52,7 +52,7 @@ describe("Thermostat", function(){
   });
 
   it("Has a max temp of 32 if powersaving is off", function(){
-  thermostat.off()
+  thermostat.powersavingOff()
   expect(thermostat.maxTemp).toEqual(32)
   })
 

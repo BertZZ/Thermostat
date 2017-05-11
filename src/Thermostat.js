@@ -6,12 +6,13 @@ function Thermostat() {
 }
 
 Thermostat.prototype.increase = function() {
-  if (this.temp === this.maxTemp){
-    console.log("Maximum Temperature Reached")
-  } else {
-    this.temp++
-  }
-}
+  // if (this.temp === this.maxTemp){
+  //   return "Maximum Temperature Reached";
+  // } else {
+    this.temp++;
+  // }
+  console.log(1)
+};
 
 Thermostat.prototype.decrease = function() {
   if (this.temp === this.minTemp){
@@ -21,12 +22,12 @@ Thermostat.prototype.decrease = function() {
   }
 }
 
-Thermostat.prototype.off = function() {
+Thermostat.prototype.powersavingOff = function() {
   this.isPowersaving = false;
   this.maxTemp = 32;
 }
 
-Thermostat.prototype.on = function() {
+Thermostat.prototype.powersavingOn = function() {
   this.isPowersaving = true;
   this.maxTemp = 25;
 }

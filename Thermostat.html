@@ -1,4 +1,19 @@
-button +
-button -
-button reset
-button powersaving
+<html>
+<head>
+<title>Thermostat</title>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="src/Thermostat.js"></script>
+<script src="src/Controller.js"></script>
+
+</head>
+<body>
+<h1> Temperature is <span id="temp"></span> degrees</h1>
+<button type="button" id="increaseTemperature">Increase temperature</button>
+<button type="button" id="decreaseTemperature">Decrease temperature</button>
+<button type="button" id="Reset">Reset</button>
+<button type="button" id="PSOn">Powersaving On</button>
+<button type="button" id="PSOff">Powersaving Off</button>
+<br></br>
+Power Saving mode is <span id="power-saving-status">on</span>
+</body>
+</html>

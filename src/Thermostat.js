@@ -6,12 +6,11 @@ function Thermostat() {
 }
 
 Thermostat.prototype.increase = function() {
-  // if (this.temp === this.maxTemp){
-  //   return "Maximum Temperature Reached";
-  // } else {
+  if (this.temp === this.maxTemp){
+    console.log("Maximum Temperature Reached")
+  } else {
     this.temp++;
-  // }
-  console.log(1)
+  }
 };
 
 Thermostat.prototype.decrease = function() {

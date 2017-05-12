@@ -5,12 +5,28 @@
 <script src="src/Thermostat.js"></script>
 <script src="src/Controller.js"></script>
 <script>
-  $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=" + "city" +"&APPID=a219fa53c03c63f4cdefb966c900c72d&units=metric", function (weather){
+  // var city = $('#cityForm').val();
+  // $('#submit').click(function(){
+  //   $('#cityForm').val(city);
+  //   console.log("city")
+  // })
+  $(function() {
+    $("#submit").click(function(){
+      // var city = $("#cityForm").val();
+      showWeather($("#cityForm").val());
+    });
+  });
+
+function showWeather(city = "London") {
+  $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=" + city +"&APPID=a219fa53c03c63f4cdefb966c900c72d&units=metric", function (weather){
+  $("#city").text(weather.name)
   $("#cityTemp").text(weather.main.temp)
   $("#cityMaxTemp").text(weather.main.temp_max)
   $("#cityMinTemp").text(weather.main.temp_min)
   $("#cityHumidity").text(weather.main.humidity)
-  })
+  });
+}
+showWeather()
 </script>
 </head>
 <body>
@@ -24,6 +40,11 @@
 Power Saving mode is <span id="power-saving-status"></span>.
 Max temperature is <span id="maxTemp"></span>
 </body>
+<form action="">
+  <label>City: </label>
+<input type="text" id="cityForm">
+<input type="button" value='City' id="submit">
+</form>
 <br></br>
 The Temperature in <span id="city"></span> is <span id="cityTemp"></span> degrees</h1>
 <br></br>

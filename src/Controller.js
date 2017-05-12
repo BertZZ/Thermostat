@@ -1,8 +1,10 @@
 $(document).ready(function() {
   var th1 = new Thermostat
+
   $('#temp').text(th1.temp);
   $('#maxTemp').text(th1.maxTemp)
   $('#power-saving-status').text(th1.isPowersaving)
+
 
   $('#increaseTemperature').on('click', function() {
   th1.increase()
@@ -17,6 +19,8 @@ $(document).ready(function() {
   $('#Reset').on('click', function() {
   th1.reset()
   $('#temp').text(th1.temp)
+  $('#maxTemp').text(th1.maxTemp)
+  $('#power-saving-status').text(th1.isPowersaving)
   })
 
   $('#PSOn').on('click', function() {

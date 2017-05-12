@@ -4,7 +4,14 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="src/Thermostat.js"></script>
 <script src="src/Controller.js"></script>
-
+<script>
+  $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=" + "city" +"&APPID=a219fa53c03c63f4cdefb966c900c72d&units=metric", function (weather){
+  $("#cityTemp").text(weather.main.temp)
+  $("#cityMaxTemp").text(weather.main.temp_max)
+  $("#cityMinTemp").text(weather.main.temp_min)
+  $("#cityHumidity").text(weather.main.humidity)
+  })
+</script>
 </head>
 <body>
 <h1> Temperature is <span id="temp"></span> degrees</h1>
@@ -17,4 +24,12 @@
 Power Saving mode is <span id="power-saving-status"></span>.
 Max temperature is <span id="maxTemp"></span>
 </body>
+<br></br>
+The Temperature in <span id="city"></span> is <span id="cityTemp"></span> degrees</h1>
+<br></br>
+Max Temperature <span id="cityMaxTemp"></span> degrees</h1>
+<br></br>
+Min Temperature <span id="cityMinTemp"></span> degrees</h1>
+<br></br>
+Humidity <span id="cityHumidity"></span> percent </h1>
 </html>
